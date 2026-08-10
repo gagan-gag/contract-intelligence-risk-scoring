@@ -1,1 +1,1 @@
-"""Application package for the Contract Intelligence API."""`n
+"""Application package for the Contract Intelligence API."""
