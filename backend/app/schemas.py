@@ -1,5 +1,5 @@
 from enum import Enum
-
+from typing import Optional
 from pydantic import BaseModel, Field
 
 
@@ -48,6 +48,21 @@ class AnalysisResponse(BaseModel):
     entities: list[Entity]
     clauses: list[Clause]
     risk: RiskScore
+
+class JobStatus(str, Enum):
+    QUEUED = "queued"
+    PROCESSING = "processing"
+    COMPLETE = "complete"
+    FAILED = "failed"
+
+
+class AnalysisJob(BaseModel):
+    job_id: str
+    document_id: str
+    status: JobStatus = JobStatus.QUEUED
+    result: Optional[AnalysisResponse] = None
+    error: Optional[str] = None
+
 
 from uuid import UUID
 
