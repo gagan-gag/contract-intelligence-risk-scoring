@@ -37,3 +37,9 @@ def _get_job(job_id: str) -> AnalysisJob:
     if job_id not in _jobs:
         raise KeyError(f"Job '{job_id}' not found")
     return _jobs[job_id]
+
+def get_job_by_document_id(document_id: str) -> AnalysisJob:
+    for job in _jobs.values():
+        if job.document_id == document_id:
+            return job
+    raise KeyError(f"No job found for document '{document_id}'")
