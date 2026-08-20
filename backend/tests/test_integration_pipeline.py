@@ -24,6 +24,7 @@ def test_full_pipeline_queued_to_risk_endpoint() -> None:
     document_id = "doc-int-001"
     job_id = "job-int-001"
     contract_text = _load_fixture_text()
+    print("SCORE:", result.risk.score, "LEVEL:", result.risk.level, "REASONS:", result.risk.reasons)
 
     # Step 1: job starts queued
     job = create_job(job_id=job_id, document_id=document_id)

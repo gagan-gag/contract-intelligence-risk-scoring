@@ -1,0 +1,7 @@
+This Service Agreement is entered into between the Client and the Provider.
+The agreement includes an automatic renewal clause and will renew for
+successive one-year terms unless either party provides written notice of
+termination at least 30 days prior to the renewal date. The Provider agrees
+to indemnify and hold harmless the Client from any claims arising out of the
+Provider's negligence. Either party may terminate without notice in the
+event of a material breach.
