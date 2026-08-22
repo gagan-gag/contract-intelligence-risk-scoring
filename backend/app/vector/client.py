@@ -10,7 +10,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from backend.app.config import get_settings
+from app.config import get_settings
 
 try:  # Import is intentionally lazy so tests can fail with a clear message.
     import chromadb

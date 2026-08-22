@@ -5,7 +5,7 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
-from backend.app.schemas import RiskLevel
+from app.schemas import RiskLevel
 from backend.app.vector.store import DocumentAnalysisMetadata, DocumentAnalysisStore
 
 

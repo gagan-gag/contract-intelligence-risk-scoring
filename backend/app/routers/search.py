@@ -8,10 +8,10 @@ from typing import Any, Annotated
 from fastapi import APIRouter, Depends, Query
 from pydantic import BaseModel, Field
 
-from backend.app.vector.chroma_adapter import ChromaAdapter
-from backend.app.vector.client import create_chroma_client, get_or_create_collection
-from backend.app.vector.embeddings import EmbeddingAdapter
-from backend.app.vector.schemas import ClauseLabel
+from app.vector.chroma_adapter import ChromaAdapter
+from app.vector.client import create_chroma_client, get_or_create_collection
+from app.vector.embeddings import EmbeddingAdapter
+from app.vector.schemas import ClauseLabel
 
 router = APIRouter(tags=["search"])
 
