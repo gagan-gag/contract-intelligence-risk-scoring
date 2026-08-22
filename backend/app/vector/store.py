@@ -15,8 +15,8 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
-from backend.app.config import get_settings
-from backend.app.schemas import RiskLevel
+from app.config import get_settings
+from app.schemas import RiskLevel
 
 
 ProcessingStatus = Literal["pending", "processing", "completed", "failed"]

@@ -4,14 +4,14 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from backend.app.main import app
-from backend.app.routers.search import (
+from app.main import app
+from app.routers.search import (
     _build_where_filter,
     get_search_collection,
     get_search_embedding_adapter,
 )
-from backend.app.vector.client import create_chroma_client, get_or_create_collection
-from backend.app.vector.schemas import ClauseLabel
+from app.vector.client import create_chroma_client, get_or_create_collection
+from app.vector.schemas import ClauseLabel
 
 
 class FixtureEmbeddingAdapter:

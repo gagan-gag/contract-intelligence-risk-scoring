@@ -5,7 +5,7 @@ from pathlib import Path
 
 from backend.app.vector.chroma_adapter import ChromaAdapter
 from backend.app.vector.client import create_chroma_client, get_or_create_collection
-from backend.app.vector.schemas import (
+from app.vector.schemas import (
     CharOffset,
     ClauseLabel,
     ExtractionMethod,

@@ -10,8 +10,8 @@ from pathlib import Path
 from collections.abc import Sequence
 from typing import Any, Optional
 
-from backend.app.config import get_settings
-from backend.app.vector.schemas import VectorChunkMetadata
+from app.config import get_settings
+from app.vector.schemas import VectorChunkMetadata
 
 try:  # chromadb is optional for Day 1 scaffolding; importing here makes
     # runtime error explicit when tests or app attempt to initialize.
