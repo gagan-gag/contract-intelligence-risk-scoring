@@ -3,3 +3,6 @@ uvicorn[standard]==0.34.0
 pytest==8.3.4
 httpx==0.28.1
 python-multipart
+chromadb>=0.4.0
+numpy
+sentence-transformers
