@@ -1,0 +1,13 @@
+MASTER SERVICES AGREEMENT
+
+This Master Services Agreement (the "Agreement") governs the relationship between Northwind Services LLC ("Provider") and Contoso Holdings, Inc. ("Customer"). The parties agree that Provider shall deliver data processing and business support services to Customer for a term beginning on July 1, 2025 and ending on June 30, 2027 unless earlier terminated for cause.
+
+The Customer will pay Provider a monthly fee of $4,250.00 for the first twelve months, with annual renewal pricing subject to reasonable adjustments. Any invoices not paid within thirty (30) days after receipt shall accrue interest at a rate of 1.5% per month.
+
+Confidentiality obligations apply to all non-public information shared between the parties, including technical specifications, pricing details, customer data, and internal business plans. The parties shall protect such information with at least the same degree of care they use to safeguard their own similar information of comparable importance.
+
+The Provider shall indemnify and hold harmless the Customer from third-party claims arising out of material breaches of security, intellectual property infringement, or negligent acts or omissions. This indemnification obligation shall survive termination of the Agreement for a period of twelve months.
+
+Limitation of liability excludes consequential damages, loss of business, and reputational harm unless the loss is directly caused by fraud or willful misconduct. In no event shall either party be liable for more than the fees paid under this Agreement in the preceding twelve months.
+
+This Agreement may be renewed automatically for successive one-year terms unless either party provides written notice of non-renewal at least thirty (30) days before the expiration date. The parties acknowledge that this summary is illustrative only and is not a legal opinion or a live contractual document.
