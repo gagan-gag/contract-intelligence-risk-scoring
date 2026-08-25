@@ -1,1 +1,44 @@
-﻿body { font-family: system-ui; margin: 0; padding: 20px; }
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #e2e8f0;
+  background: #020817;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  html {
+    @apply bg-slate-950 text-slate-100 antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-slate-950 font-sans text-slate-100;
+    background-image:
+      radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 28%),
+      radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.14), transparent 24%);
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+  }
+
+  .surface-panel {
+    @apply rounded-2xl border border-slate-700/80 bg-slate-900/80 shadow-soft ring-1 ring-white/5;
+  }
+
+  .status-alert {
+    @apply rounded-xl border border-rose-500/30 bg-rose-500/10 px-3 py-2 text-sm leading-5 text-rose-200;
+  }
+}
