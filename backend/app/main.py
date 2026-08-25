@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers.risk import router as risk_router
 from app.routers.search import router as search_router
@@ -8,6 +9,14 @@ app = FastAPI(
     title="Contract Intelligence API",
     version="0.1.0",
     description="API for contract ingestion, analysis, and risk scoring.",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(upload_router)

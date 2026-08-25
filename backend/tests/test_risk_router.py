@@ -40,3 +40,35 @@ def test_get_risk_409_for_incomplete_job() -> None:
     response = client.get("/documents/doc-r2/risk")
 
     assert response.status_code == 409
+
+
+def test_get_analysis_returns_full_response() -> None:
+    create_job(job_id="job-r3", document_id="doc-r3")
+
+    result = analyse_contract(
+        document_id="doc-r3",
+        filename="acme-contract.pdf",
+        file_type="pdf",
+        contract_text="Acme Corp agreed on January 15, 2024 with unlimited liability and auto-renewal.",
+        page_count=1,
+    )
+    complete_job("job-r3", result)
+
+    response = client.get("/documents/doc-r3/analysis")
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["document"]["document_id"] == "doc-r3"
+    assert "risk" in body
+    assert "entities" in body
+    assert "clauses" in body
+    assert isinstance(body["entities"], list)
+    assert isinstance(body["clauses"], list)
+
+
+def test_get_analysis_404_and_409() -> None:
+    assert client.get("/documents/unknown-doc/analysis").status_code == 404
+
+    create_job(job_id="job-r4", document_id="doc-r4")
+    fail_job("job-r4", "error")
+    assert client.get("/documents/doc-r4/analysis").status_code == 409

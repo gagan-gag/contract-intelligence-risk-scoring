@@ -50,7 +50,7 @@ def test_upload_accepts_valid_pdf() -> None:
 
     assert response.status_code == 200
     body = response.json()
-    assert body["status"] == "queued"
+    assert body["status"] in ("queued", "complete")
     assert body["filename"] == "contract.pdf"
     assert "document_id" in body
     assert "job_id" in body

@@ -48,6 +48,8 @@ class AnalysisResponse(BaseModel):
     entities: list[Entity]
     clauses: list[Clause]
     risk: RiskScore
+    nlp_backend: Optional[str] = None  # "spacy" | "bert" | "regex" | "heuristic"
+
 
 class JobStatus(str, Enum):
     QUEUED = "queued"
@@ -63,23 +65,6 @@ class AnalysisJob(BaseModel):
     result: Optional[AnalysisResponse] = None
     error: Optional[str] = None
 
-
-from uuid import UUID
-
-from pydantic import BaseModel, Field
-
-
-class DocumentUploadResponse(BaseModel):
-    document_id: str
-    filename: str
-    file_type: str
-    status: str = "queued"
-
-
-class AnalysisStatusResponse(BaseModel):
-    document_id: str
-    status: str
-    message: str
 
 class DocumentUploadResponse(BaseModel):
     document_id: str
