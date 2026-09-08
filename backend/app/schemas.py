@@ -35,6 +35,8 @@ class Clause(BaseModel):
     text: str
     page_number: int = Field(gt=0)
     confidence: float = Field(ge=0, le=1)
+    redline_suggestion: Optional[str] = None
+    risk_mitigation: Optional[str] = None
 
 
 class RiskScore(BaseModel):
@@ -48,6 +50,7 @@ class AnalysisResponse(BaseModel):
     entities: list[Entity]
     clauses: list[Clause]
     risk: RiskScore
+
 
 class JobStatus(str, Enum):
     QUEUED = "queued"
@@ -64,27 +67,11 @@ class AnalysisJob(BaseModel):
     error: Optional[str] = None
 
 
-from uuid import UUID
-
-from pydantic import BaseModel, Field
-
-
 class DocumentUploadResponse(BaseModel):
     document_id: str
+    job_id: Optional[str] = "queued"
     filename: str
-    file_type: str
-    status: str = "queued"
-
-
-class AnalysisStatusResponse(BaseModel):
-    document_id: str
-    status: str
-    message: str
-
-class DocumentUploadResponse(BaseModel):
-    document_id: str
-    filename: str
-    file_type: str
+    file_type: str = "pdf"
     status: str = "queued"
 
 
