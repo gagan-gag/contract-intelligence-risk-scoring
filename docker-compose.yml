@@ -1,0 +1,41 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: contract-api
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app/backend:/app
+    volumes:
+      - ./backend:/app/backend
+    depends_on:
+      - chroma
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: contract-ui
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000
+    depends_on:
+      - backend
+
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: chroma-db
+    ports:
+      - "8001:8000"
+    environment:
+      - IS_PERSISTENT=TRUE
+      - PERSIST_DIRECTORY=/data/chroma
+    volumes:
+      - chroma-data:/data/chroma
+
+volumes:
+  chroma-data:

@@ -158,6 +158,13 @@ env.bak/
 venv.bak/
 
 # Spyder project settings
+.dockerignore
+docker-compose.override.yml
+chroma-data/
+node_modules/
+dist/
+.env.local
+.DS_Store
 .spyderproject
 .spyproject
 
