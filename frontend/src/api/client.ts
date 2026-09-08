@@ -4,9 +4,9 @@ const getApiBaseUrl = (): string => {
   }
   if (typeof window !== 'undefined') {
     const hostname = window.location.hostname || '127.0.0.1'
-    return `${window.location.protocol}//${hostname}:8000`
+    return `${window.location.protocol}//${hostname}:8001`
   }
-  return 'http://127.0.0.1:8000'
+  return 'http://127.0.0.1:8001'
 }
 
 const BASE_URL = getApiBaseUrl()

@@ -132,10 +132,10 @@ pip install -r requirements.txt
 ### 2. Run Backend
 
 ```powershell
-uvicorn app.main:app --app-dir backend --reload --port 8000
+uvicorn app.main:app --app-dir backend --reload --port 8001
 ```
 
-API docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+API docs: [http://localhost:8001/docs](http://localhost:8001/docs)
 
 ### 3. Run Frontend
 
